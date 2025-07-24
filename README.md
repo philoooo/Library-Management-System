@@ -8,7 +8,7 @@
 This project demonstrates the implementation of a Library Management System using SQL. It includes creating and managing tables, performing CRUD operations, and executing advanced SQL queries. The goal is to showcase skills in database design, manipulation, and querying.
 
 
-![Library_project](https://github.com/philoooo/Library-Management-System/blob/main/ERD_Library%20.png)
+![Library_project](pexels-ivo-rainha-527110-1290141.jpg)
 
 ## Objectives
 
