@@ -127,7 +127,7 @@ REFERENCES issued_status(issued_id);
 - **Update**: Updated records in the `employees` table.
 - **Delete**: Removed records from the `members` table as needed.
 
-**1. Create a New Book Record -- "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
+1. Create a New Book Record -- "978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.')"
 
 ```sql
 INSERT INTO books(isbn, book_title, category, rental_price, status, author, publisher)
@@ -135,7 +135,7 @@ VALUES
 ('978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
 ```
 
-**2. Update an Existing Member's Address
+2. Update an Existing Member's Address
 
 ```sql
 UPDATE members
@@ -143,14 +143,14 @@ SET member_address = '124 Main St'
 WHERE member_id = 'C101';
 ```
 
-**3. Delete the record with issued_id = 'IS121' from the issued_status table.
+3. Delete the record with issued_id = 'IS121' from the issued_status table.
 
 ```sql
 DELETE FROM issued_status
 WHERE issued_id = 'IS121';
 ```
 
-**4. Select all books issued by the employee with emp_id = 'E101'.
+4. Select all books issued by the employee with emp_id = 'E101'.
 
 ```sql
 SELECT * 
@@ -158,7 +158,7 @@ FROM issued_status
 WHERE issued_emp_id = 'E101';
 ```
 
-**5. Find members who have issued more than one book.
+5. Find members who have issued more than one book.
 
 ```sql
 SELECT 
@@ -171,7 +171,7 @@ HAVING COUNT(*) > 1;
 
 ### CTAS (Create Table As Select)
 
-**6. Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
+6. Used CTAS to generate new tables based on query results - each book and total book_issued_cnt**
 
 ```sql
 CREATE TABLE book_counts
@@ -191,7 +191,7 @@ FROM book_counts;
 
 The following SQL queries were used to address specific questions:
 
-**7. Retrieve all books in a specific category.
+7. Retrieve all books in a specific category.
 
 ```sql
 SELECT * 
@@ -199,7 +199,7 @@ FROM books
 WHERE category = 'Classic';
 ```
 
-**8. Find Total Rental Income by Category.
+8. Find Total Rental Income by Category.
 
 ```sql
 SELECT
@@ -212,7 +212,7 @@ ON ist.issued_book_isbn = b.isbn
 GROUP BY 1;
 ```
 
-**9. List Members Who Registered in the Last 500 Days.
+9. List Members Who Registered in the Last 500 Days.
 
 ```sql
 SELECT *
@@ -220,7 +220,7 @@ FROM members
 WHERE reg_date >= CURRENT_DATE - INTERVAL '500 days';
 ```
 
-**10. List Employees with Their Branch Manager's Name and their branch details.
+10. List Employees with Their Branch Manager's Name and their branch details.
 
 ```sql
 SELECT 
@@ -234,7 +234,7 @@ JOIN employees AS e2
 ON b.manager_id = e2.emp_id;
 ```
 
-**11. Create a Table of Books with Rental Price Above a Certain Threshold of $7.50 USD.
+11. Create a Table of Books with Rental Price Above a Certain Threshold of $7.50 USD.
 
 ```sql
 CREATE TABLE expensive_books
@@ -244,7 +244,7 @@ FROM books
 WHERE rental_price > 7.50;
 ```
 
-**12. Retrieve the List of Books Not Yet Returned.
+12. Retrieve the List of Books Not Yet Returned.
 
 ```sql
 SELECT 
